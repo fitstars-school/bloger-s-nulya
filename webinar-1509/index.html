@@ -154,11 +154,15 @@ a{color:inherit}
 .quote-card .who span{display:block;font-weight:500;color:#B9BDB3;font-size:13px}
 
 /* ---------- таймер на первом экране ---------- */
-.hero-clock{margin-top:30px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.hc-label{font-weight:700;font-size:15px}
-.hero-clock .unit{background:var(--surface);border:1px solid var(--line);min-width:70px}
-.hero-clock .unit b{color:var(--ink)}
-.hero-clock .unit span{color:var(--ink-3)}
+.hero-clock{margin-top:30px;display:inline-flex;align-items:center;gap:22px;flex-wrap:wrap;
+  background:var(--dark);color:#fff;border-radius:22px;padding:18px 24px 18px 26px;
+  box-shadow:0 18px 40px -24px rgba(16,18,20,.55)}
+.hc-label{font-weight:700;font-size:15px;color:#fff}
+.hc-label::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:10px;vertical-align:middle;
+  box-shadow:0 0 0 4px rgba(196,245,66,.18)}
+.hero-clock .unit{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);min-width:70px}
+.hero-clock .unit b{color:var(--accent)}
+.hero-clock .unit span{color:#B9BDB3}
 
 /* ---------- плашка регистрации (тёмный блок) ---------- */
 .sec-regtimer{padding:0 0 72px}
@@ -350,6 +354,9 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
   .hdr-cta .btn{min-height:42px;font-size:14px;padding:0 16px}
   .hdr-gift{display:none}
   .hero{padding:34px 0 56px}
+.hero-clock{display:flex;flex-direction:column;align-items:flex-start;width:100%;padding:16px 18px 18px;gap:12px;border-radius:18px}
+.hero-clock .clock{width:100%;gap:8px}
+.hero-clock .unit{flex:1;min-width:0}
   .sec{padding:60px 0}
   h1{font-size:clamp(32px,9vw,42px)}
   .hero-sub{font-size:19px}
