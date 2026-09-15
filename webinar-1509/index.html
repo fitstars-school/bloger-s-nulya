@@ -735,7 +735,7 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
 
 // честный таймер: считает до фиксированной даты, переживает перезагрузку
 (function(){
-  var target=new Date('2026-09-22T15:00:00+03:00').getTime();
+  var target=new Date('2026-09-22T18:00:00+03:00').getTime();
   var D=document.querySelectorAll('.cd-d'),H=document.querySelectorAll('.cd-h'),M=document.querySelectorAll('.cd-m'),S=document.querySelectorAll('.cd-s');
   function p(n){return String(n).padStart(2,'0')}
   function set(list,v){list.forEach(function(el){el.textContent=v})}
