@@ -8,10 +8,157 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Как превратить свой блог в источник дохода – мастер-класс 15 октября">
 <meta property="og:description" content="Пошаговый план за 20 минут в день: от первой рекламы и амбассадорства до продаж услуг. Онлайн, 15:00 мск.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet">
+<!-- шрифты лежат на самом сайте (fonts/), без Google: страница не ждёт внешний сервер -->
+<link rel="preload" href="fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://influencerexpert.ru">
+<script>document.documentElement.classList.add('js')</script>
 <style>
+/* Manrope cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/manrope-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* Manrope latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/manrope-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Manrope cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/manrope-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* Manrope latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/manrope-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Manrope cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/manrope-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* Manrope latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/manrope-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Manrope cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/manrope-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* Manrope latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/manrope-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Manrope cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(fonts/manrope-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* Manrope latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(fonts/manrope-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Unbounded cyrillic */
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/unbounded-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* Unbounded latin */
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/unbounded-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Unbounded cyrillic */
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/unbounded-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* Unbounded latin */
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/unbounded-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Unbounded cyrillic */
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(fonts/unbounded-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* Unbounded latin */
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(fonts/unbounded-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* ============================================================
    ДИЗАЙН-КИТ FITSTARS «БЛОГЕР С НУЛЯ» (каркас – лендинг вебинара 22.09)
    Доминанты – белый и графит. Салатовый – только кнопки и
@@ -69,8 +216,8 @@ a{color:inherit}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
 /* scroll-reveal */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1;transform:none}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
 .grid > .reveal:nth-child(2){transition-delay:.06s}
 .grid > .reveal:nth-child(3){transition-delay:.12s}
 .grid > .reveal:nth-child(4){transition-delay:.18s}
@@ -392,6 +539,12 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
 .modal-head h2{font-size:22px}
 .modal-body{border-radius:16px;overflow:hidden}
 .modal-body iframe{width:100%!important;border:none;display:block}
+.gc-load,.gc-fail{margin:8px 12px 12px;padding:26px 20px;border-radius:16px;text-align:center;font-weight:600;font-size:15px;color:var(--ink-2);background:var(--wash)}
+.gc-fail{display:none}
+.gc-slot.failed .gc-load{display:none}
+.gc-slot.failed .gc-fail{display:block}
+.gc-slot.ready .gc-load,.gc-slot.ready .gc-fail{display:none}
+.gc-fail a{font-weight:700;text-decoration:underline;text-decoration-color:var(--accent-strong);text-decoration-thickness:2px}
 .form-ph{margin:8px 12px 12px;padding:26px 20px;border:2px dashed #CFD3D8;border-radius:16px;text-align:center;color:var(--ink-3);font-weight:600;font-size:15px}
 .modal-foot{padding:14px 20px 10px;text-align:center;font-size:var(--fine);color:var(--ink-2);line-height:1.5}
 .modal-foot b{color:var(--ink)}
@@ -779,8 +932,11 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
       <h2>Регистрация на мастер-класс</h2>
     </div>
     <div class="modal-body">
-      <!-- GetCourse widget: «Блогер | Бесплатно» -->
-      <script id="80a6dac8ae1b1892f221f6f10ca07e4da1cd23aa" src="https://influencerexpert.ru/pl/lite/widget/script?id=1666764"></script>
+      <!-- GetCourse widget «Блогер | Бесплатно» – подключается скриптом внизу страницы (в фоне, не тормозит загрузку) -->
+      <div class="gc-slot" data-gc-id="80a6dac8ae1b1892f221f6f10ca07e4da1cd23aa" data-gc-src="https://influencerexpert.ru/pl/lite/widget/script?id=1666764">
+        <div class="gc-load">Загружаем форму…</div>
+        <div class="gc-fail">Форма не загрузилась. Обновите страницу или напишите нам в Telegram <a href="https://t.me/zabota_kurs" target="_blank" rel="noopener">@zabota_kurs</a> – зарегистрируем вручную.</div>
+      </div>
     </div>
     <div class="modal-foot">⚡️ Сразу после регистрации – тест «Твоя платформа 2026-2027»</div>
   </div>
@@ -793,8 +949,11 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
       <h2>VIP-участие в мастер-классе</h2>
     </div>
     <div class="modal-body">
-      <!-- GetCourse widget: «Блогер | Платно» (VIP 590 ₽) -->
-      <script id="1f9b18915731f73fc96e55185a82828783ecab1c" src="https://influencerexpert.ru/pl/lite/widget/script?id=1666779"></script>
+      <!-- GetCourse widget «Блогер | Платно» (VIP 590 ₽) – подключается скриптом внизу страницы -->
+      <div class="gc-slot" data-gc-id="1f9b18915731f73fc96e55185a82828783ecab1c" data-gc-src="https://influencerexpert.ru/pl/lite/widget/script?id=1666779">
+        <div class="gc-load">Загружаем форму…</div>
+        <div class="gc-fail">Форма не загрузилась. Обновите страницу или напишите нам в Telegram <a href="https://t.me/zabota_kurs" target="_blank" rel="noopener">@zabota_kurs</a> – оформим VIP вручную.</div>
+      </div>
     </div>
     <div class="modal-foot">🔥 Все 590 ₽ зачисляются на ваш депозит в GetCourse и идут в зачёт курса «Блогер с нуля»</div>
   </div>
@@ -819,9 +978,29 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
   els.forEach(function(e){io.observe(e)});
 })();
 
+// формы GetCourse: грузим в фоне после загрузки страницы или сразу при открытии окна
+(function(){
+  function load(slot){
+    if(slot.dataset.started) return; slot.dataset.started='1';
+    var sc=document.createElement('script'); sc.id=slot.dataset.gcId; sc.src=slot.dataset.gcSrc; sc.async=true;
+    var t=setTimeout(function(){ if(!slot.querySelector('iframe')) slot.classList.add('failed') }, 15000);
+    sc.onerror=function(){ clearTimeout(t); slot.classList.add('failed') };
+    if('MutationObserver' in window){
+      new MutationObserver(function(){ if(slot.querySelector('iframe')){ clearTimeout(t); slot.classList.remove('failed'); slot.classList.add('ready') } })
+        .observe(slot,{childList:true,subtree:true});
+    }
+    slot.appendChild(sc);
+  }
+  window.gcLoad=load;
+  function all(){ document.querySelectorAll('.gc-slot').forEach(load) }
+  if(document.readyState==='complete') setTimeout(all,1500);
+  else window.addEventListener('load',function(){ setTimeout(all,1500) });
+})();
+
 // модалки: открыть / закрыть
 (function(){
-  function open(id){var m=document.getElementById(id);if(m){m.classList.add('open');document.body.style.overflow='hidden'}}
+  function open(id){var m=document.getElementById(id);if(m){m.classList.add('open');document.body.style.overflow='hidden';
+    m.querySelectorAll('.gc-slot').forEach(function(s){window.gcLoad&&window.gcLoad(s)})}}
   function closeAll(){document.querySelectorAll('.modal.open').forEach(function(m){m.classList.remove('open')});document.body.style.overflow=''}
   document.querySelectorAll('[data-modal]').forEach(function(b){b.addEventListener('click',function(){open(b.getAttribute('data-modal'))})});
   document.querySelectorAll('.modal').forEach(function(m){m.addEventListener('click',function(e){if(e.target===m||e.target.hasAttribute('data-close'))closeAll()})});
