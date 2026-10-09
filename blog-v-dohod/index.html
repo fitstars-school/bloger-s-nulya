@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Мастер-класс «Блогер с нуля» – 15 октября, 15:00 мск</title>
-<meta name="description" content="Онлайн мастер-класс FitStars: как превратить свой блог в источник дохода – от первой рекламы и амбассадорства до продаж услуг. 15 октября, 15:00 мск, 90 минут.">
+<meta name="description" content="Онлайн мастер-класс FitStars: как превратить свой блог в источник дохода – от первой рекламы и амбассадорства до продаж услуг. 15 октября, 15:00 мск.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Как превратить свой блог в источник дохода – мастер-класс 15 октября">
 <meta property="og:description" content="Пошаговый план за 20 минут в день: от первой рекламы и амбассадорства до продаж услуг. Онлайн, 15:00 мск.">
@@ -268,15 +268,22 @@ a{color:inherit}
 .trust .em{font-size:24px;line-height:1.1;flex-shrink:0}
 
 /* ---------- отзывы ---------- */
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
-.rv-col{display:flex;flex-direction:column;gap:18px}
+/* лента отзывов: одна строка, сама прокручивается по кругу, листается пальцем и стрелками */
+.reviews{position:relative;margin:0 calc(50% - 50vw)}
+.rv-track{display:flex;gap:18px;overflow-x:auto;padding:8px max(20px,calc(50vw - 560px)) 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rv-track::-webkit-scrollbar{display:none}
+.rv-track > *{flex:0 0 auto}
 .rv{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-  padding:10px;cursor:zoom-in;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;display:block;width:100%}
+  padding:10px;cursor:zoom-in;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;display:block;height:440px}
 .rv:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#D2D6DB}
-.rv img{width:100%;height:auto;display:block;border-radius:12px}
+.rv img{height:100%;width:auto;display:block;border-radius:12px}
+.rv-nav{display:flex;justify-content:center;gap:12px;margin-top:14px}
+.rv-nav button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--surface);font-size:18px;cursor:pointer;color:var(--ink)}
+.rv-nav button:hover{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
 .rv-ph{border:2px dashed #CFD3D8;border-radius:var(--radius);padding:34px 22px;
   text-align:center;color:var(--ink-3);font-weight:600;font-size:15px;background:var(--surface)}
-.rv-cta{background:var(--dark);color:#fff;border-radius:var(--radius);padding:30px 26px;position:relative;overflow:hidden}
+.rv-cta{background:var(--dark);color:#fff;border-radius:var(--radius);padding:30px 26px;position:relative;overflow:hidden;
+  width:300px;height:440px;display:flex;flex-direction:column;justify-content:center}
 .rv-cta::after{content:"";position:absolute;right:-80px;bottom:-90px;width:240px;height:240px;border-radius:50%;
   background:radial-gradient(circle,rgba(196,245,66,.25),transparent 70%);pointer-events:none}
 .rv-cta > *{position:relative;z-index:1}
@@ -399,7 +406,9 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
   .hero-cta .btn{width:100%}
   .hero-meta li{flex:1 1 auto;justify-content:center}
   .gift-card{padding:28px 24px 24px}
-  .plans,.gifts,.foot-grid,.trust,.reviews,.krugi{grid-template-columns:1fr}
+  .plans,.gifts,.foot-grid,.trust,.krugi{grid-template-columns:1fr}
+  .rv,.rv-cta{height:360px}
+  .rv-cta{width:260px}
   .plan{padding:26px 22px 24px}
   .price b{font-size:40px}
   .cash-note{grid-template-columns:1fr;gap:10px;padding:20px}
@@ -441,9 +450,9 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
     </div>
     <div class="hdr-mid">
       <span class="label">Онлайн мастер-класс</span>
-      <span class="when"><b>15 октября</b> · 15:00 мск · 90 минут</span>
+      <span class="when"><b>15 октября</b> · 15:00 мск</span>
     </div>
-    <a class="btn btn-sm" href="#tarify">Зарегистрироваться <span class="arw">→</span></a>
+    <a class="btn btn-sm" href="#tarify">Забронировать <span class="arw">→</span></a>
   </div>
 </header>
 
@@ -457,10 +466,9 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
         <p class="hero-sub">Пошаговый практический план за 20 минут в день без выгорания, танцев в сторис и вложений в рекламу.</p>
         <ul class="hero-meta">
           <li>📅 <span><b>15 октября</b> в 15:00 мск</span></li>
-          <li>⏱ <span>Длительность: <b>90 минут</b></span></li>
         </ul>
         <div class="hero-cta">
-          <a class="btn" href="#tarify">Зарегистрироваться и выбрать тариф <span class="arw">→</span></a>
+          <a class="btn" href="#tarify">Выбрать формат участия <span class="arw">→</span></a>
         </div>
         <div class="hero-clock">
           <span class="hc-label">До начала эфира</span>
@@ -506,13 +514,13 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
       <h2>В программе <span class="mark">мастер-класса</span></h2>
     </div>
     <div class="prog grid">
-      <div class="prog-item reveal"><span class="ck">🗺</span><div><h3>Разбор стратегии заработка в разного вида блогах</h3><p>Пошаговые карты монетизации для мам, домохозяек, экспертов и новичков с нуля.</p></div></div>
+      <div class="prog-item reveal"><span class="ck">🗺</span><div><h3>Разбор стратегии монетизации в разного вида блогах</h3><p>Пошаговые карты монетизации для мам, домохозяек, экспертов и новичков с нуля.</p></div></div>
       <div class="prog-item reveal"><span class="ck">☕️</span><div><h3>Как создавать контент на быте</h3><p>Технология превращения повседневных дел и привычек в сочные посты за пару минут.</p></div></div>
-      <div class="prog-item reveal"><span class="ck">🤝</span><div><h3>Монетизация бытовой рутины через амбассадорство</h3><p>Как заходить в партнёрские программы и получать выплаты от брендов.</p></div></div>
+      <div class="prog-item reveal"><span class="ck">🤝</span><div><h3>Монетизация бытовой рутины через амбассадорство</h3><p>Как заходить в партнёрские программы и получать вознаграждения от брендов.</p></div></div>
       <div class="prog-item reveal"><span class="ck">📈</span><div><h3>Ошибки в упаковке и схема поднятия чека на услуги в 2–3 раза</h3><p>Создание системной воронки смыслов для экспертов.</p></div></div>
       <div class="prog-item reveal"><span class="ck">🤖</span><div><h3>Преодоление страха камеры и старт с помощью нейросетей с нуля</h3><p>Ведение блога легко, без выгорания и стыда.</p></div></div>
       <div class="prog-item reveal"><span class="ck">🎓</span><div><h3>Презентация курса «Блогер с нуля» от FitStars</h3><p>Готовая пошаговая экосистема для запуска вашего блога.</p></div></div>
-      <div class="prog-item hot reveal"><span class="ck">🎁</span><div><h3>Подарок всем участникам в конце эфира</h3><p>Гайд по настройке канала в мессенджере MAX – выдаётся по кодовому слову в финале.</p></div></div>
+      <div class="prog-item hot reveal"><span class="ck">🎁</span><div><h3>Подарок всем участникам в конце эфира</h3><p>Гайд по настройке канала в мессенджере MAX – выдаётся по кодовому слову в конце мастер-класса.</p></div></div>
     </div>
   </div>
 </section>
@@ -531,10 +539,10 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
         <div class="plan-name">«Базовый»</div>
         <div class="price"><b>0 ₽</b></div>
         <ul class="feat">
-          <li class="yes"><span class="mk">✓</span><span><span class="t">Участие в онлайн-эфире (90 минут)</span></span></li>
+          <li class="yes"><span class="mk">✓</span><span><span class="t">Участие в онлайн-эфире</span></span></li>
           <li class="yes"><span class="mk">✓</span><span><span class="t">Запись мастер-класса</span><span class="d">⏱ На 24 часа</span></span></li>
           <li class="yes"><span class="mk">✓</span><span><span class="t">Полный PDF-конспект эфира</span></span></li>
-          <li class="yes"><span class="mk">✓</span><span><span class="t">Интерактивный тест «Твоя платформа 2026-2027»</span><span class="d">Сразу за регистрацию</span></span></li>
+          <li class="yes"><span class="mk">✓</span><span><span class="t">Интерактивный тест «Твоя платформа 2026-2027»</span><span class="d">Сразу после регистрации</span></span></li>
           <li class="no"><span class="mk">✕</span><span><span class="t">Доступ к Редактору каруселей</span></span></li>
           <li class="no"><span class="mk">✕</span><span><span class="t">Видеоурок «Нейрофотосессия и видеоаватары с ИИ»</span></span></li>
           <li class="no"><span class="mk">✕</span><span><span class="t">100% кэшбэк-депозит на GetCourse</span></span></li>
@@ -547,10 +555,10 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
         <div class="plan-name">«Всё включено»</div>
         <div class="price"><b>590 ₽</b><s>1 590 ₽</s></div>
         <ul class="feat">
-          <li class="yes"><span class="mk">✓</span><span><span class="t">Участие в онлайн-эфире (90 минут)</span></span></li>
+          <li class="yes"><span class="mk">✓</span><span><span class="t">Участие в онлайн-эфире</span></span></li>
           <li class="yes"><span class="mk">✓</span><span><span class="t">Запись мастер-класса</span><span class="d">⏱ На 14 дней</span></span></li>
           <li class="yes"><span class="mk">✓</span><span><span class="t">Полный PDF-конспект эфира</span></span></li>
-          <li class="yes"><span class="mk">✓</span><span><span class="t">Интерактивный тест «Твоя платформа 2026-2027»</span><span class="d">Сразу за регистрацию</span></span></li>
+          <li class="yes"><span class="mk">✓</span><span><span class="t">Интерактивный тест «Твоя платформа 2026-2027»</span><span class="d">Сразу после регистрации</span></span></li>
           <li class="yes"><span class="mk">✓</span><span><span class="t">Доступ к Редактору каруселей</span><span class="d">Инструмент для создания продающих карточек</span></span></li>
           <li class="yes"><span class="mk">✓</span><span><span class="t">Видеоурок «Нейрофотосессия и видеоаватары с ИИ»</span><span class="d">Результат: свой нейрофотосет и простой говорящий аватар</span></span></li>
           <li class="yes cash"><span class="mk">✓</span><span><span class="t">🔥 100% кэшбэк-депозит на GetCourse</span><span class="d">Вся сумма 590 ₽ зачисляется на ваш депозит на GetCourse и списывается при оплате курса</span></span></li>
@@ -583,8 +591,7 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
         </div>
       </div>
       <div class="speaker reveal">
-        <!-- ФОТО: когда придёт фото Ангелины, заменить блок ниже на <img class="sp-photo" src="..." alt="Ангелина Косяк"> -->
-        <div class="sp-photo-ph" aria-hidden="true"><span class="av">АК</span><span>Фото Ангелины</span></div>
+        <img class="sp-photo" src="foto/kosyak.jpg?v=1" alt="Ангелина Косяк" loading="lazy">
         <div class="sp-body">
           <div class="sp-name">Ангелина Косяк</div>
           <div class="sp-role">Главный куратор курса «Блогер с нуля»</div>
@@ -630,32 +637,53 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
       </figure>
     </div>
     <div class="reviews">
-     <div class="rv-col reveal">
-      <button type="button" class="rv"><img src="otzyvy/01.jpg?v=1791529640" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv"><img src="otzyvy/04.jpg?v=1791529773" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv"><img src="otzyvy/07.jpg?v=1791529640" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv"><img src="otzyvy/08.jpg?v=1791529640" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-     </div>
-     <div class="rv-col reveal">
-      <button type="button" class="rv"><img src="otzyvy/02.jpg?v=1791529773" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv"><img src="otzyvy/05.jpg?v=1791529773" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv"><img src="otzyvy/09.jpg?v=1791529640" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv"><img src="otzyvy/11.jpg?v=1791529773" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv"><img src="otzyvy/12.jpg?v=1791529773" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv"><img src="otzyvy/13.jpg?v=1791529773" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-     </div>
-     <div class="rv-col reveal">
-      <button type="button" class="rv"><img src="otzyvy/03.jpg?v=1791529773" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv"><img src="otzyvy/06.jpg?v=1791529640" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv"><img src="otzyvy/10.jpg?v=1791529640" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <div class="rv-track" id="rvTrack">
       <div class="rv-cta">
         <span class="label">Ваша история</span>
         <h3>Следующий отзыв – ваш</h3>
         <p>Каждый из этих результатов начинался с первого шага. Ваш – мастер-класс 15 октября.</p>
         <a class="btn btn-sm" href="#tarify">Выбрать тариф <span class="arw">→</span></a>
       </div>
-     </div>
+      <button type="button" class="rv"><img src="otzyvy/01.jpg?v=1791529640" width="1000" height="1684" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/02.jpg?v=1791529773" width="1000" height="657" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/03.jpg?v=1791529773" width="1000" height="1500" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/04.jpg?v=1791529773" width="1000" height="1271" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/05.jpg?v=1791529773" width="1000" height="764" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/06.jpg?v=1791529640" width="1000" height="1844" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/07.jpg?v=1791529640" width="1000" height="2065" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/08.jpg?v=1791529640" width="1000" height="378" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/09.jpg?v=1791529640" width="1000" height="2042" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/10.jpg?v=1791529640" width="1000" height="1243" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/11.jpg?v=1791529773" width="1000" height="699" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/12.jpg?v=1791529773" width="1000" height="849" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/13.jpg?v=1791529773" width="1000" height="154" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      </div>
     </div>
+    <div class="rv-nav"><button type="button" id="rvPrev" aria-label="Предыдущий отзыв">←</button><button type="button" id="rvNext" aria-label="Следующий отзыв">→</button></div>
+    <script>
+    // лента отзывов: копируем набор, чтобы шла по кругу; автопрокрутка, пауза при наведении и касании
+    (function(){
+      var t=document.getElementById('rvTrack'); if(!t) return;
+      var orig=[].slice.call(t.children);
+      orig.forEach(function(n){var c=n.cloneNode(true);c.setAttribute('aria-hidden','true');t.appendChild(c)});
+      var half=function(){return t.scrollWidth/2}, paused=false, pos=0, last=null,
+          reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function wrap(){ if(t.scrollLeft>=half()) t.scrollLeft-=half(); else if(t.scrollLeft<=0) t.scrollLeft+=half(); }
+      function step(ts){
+        if(last!==null && !paused && !reduce){ pos+=(ts-last)*0.04; if(pos>=1){ var d=Math.floor(pos); t.scrollLeft+=d; pos-=d; wrap(); } }
+        last=ts; requestAnimationFrame(step);
+      }
+      t.scrollLeft=1; requestAnimationFrame(step);
+      t.addEventListener('mouseenter',function(){paused=true});
+      t.addEventListener('mouseleave',function(){paused=false});
+      t.addEventListener('touchstart',function(){paused=true},{passive:true});
+      t.addEventListener('touchend',function(){setTimeout(function(){paused=false},2500)});
+      t.addEventListener('scroll',wrap,{passive:true});
+      function jump(dir){ paused=true; t.scrollBy({left:dir*Math.min(t.clientWidth*0.8,520),behavior:'smooth'}); setTimeout(function(){paused=false},2500); }
+      document.getElementById('rvPrev').addEventListener('click',function(){jump(-1)});
+      document.getElementById('rvNext').addEventListener('click',function(){jump(1)});
+    })();
+    </script>
   </div>
 </section>
 
@@ -667,15 +695,15 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
       <h2>Зарегистрируйтесь прямо сейчас и <span class="mark">заберите свои бонусы!</span></h2>
     </div>
     <div class="gifts grid">
-      <div class="gift reveal"><div class="em">⚡️</div><div><span class="when">Сразу за регистрацию</span><h3>Интерактивный тест «Твоя платформа 2026-2027»</h3></div></div>
-      <div class="gift reveal"><div class="em">🎁</div><div><span class="when">В конце эфира</span><h3>Гайд по настройке канала в мессенджере MAX</h3></div></div>
+      <div class="gift reveal"><div class="em">⚡️</div><div><span class="when">Сразу после регистрации</span><h3>Интерактивный тест «Твоя платформа 2026-2027»</h3></div></div>
+      <div class="gift reveal"><div class="em">🎁</div><div><span class="when">В конце мастер-класса</span><h3>Гайд по настройке канала в мессенджере MAX</h3></div></div>
     </div>
     <div id="reg"></div>
     <div class="reg-plate reveal">
       <div>
         <span class="label">Регистрация</span>
         <h2>Мастер-класс 15 октября в 15:00 мск</h2>
-        <p>Онлайн, 90 минут. Ссылка на эфир придёт после регистрации.</p>
+        <p>Онлайн. Ссылка на эфир придёт после регистрации.</p>
       </div>
       <div class="reg-side">
         <button type="button" class="btn" data-modal="modal-free">Зарегистрироваться на мастер-класс <span class="arw">→</span></button>
