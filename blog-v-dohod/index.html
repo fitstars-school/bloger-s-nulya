@@ -985,6 +985,11 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
     var sc=document.createElement('script'); sc.id=slot.dataset.gcId; sc.src=slot.dataset.gcSrc; sc.async=true;
     var t=setTimeout(function(){ if(!slot.querySelector('iframe')) slot.classList.add('failed') }, 15000);
     sc.onerror=function(){ clearTimeout(t); slot.classList.add('failed') };
+    // виджет сам стартует по DOMContentLoaded, которое к этому моменту уже прошло, – запускаем его явно
+    sc.onload=function(){
+      var id=slot.dataset.gcId, f=window['startWidget'+id];
+      try{ if(typeof f==='function') f(); else document.dispatchEvent(new Event('StartWidget'+id)) }catch(e){ slot.classList.add('failed') }
+    };
     if('MutationObserver' in window){
       new MutationObserver(function(){ if(slot.querySelector('iframe')){ clearTimeout(t); slot.classList.remove('failed'); slot.classList.add('ready') } })
         .observe(slot,{childList:true,subtree:true});
