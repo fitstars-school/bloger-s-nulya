@@ -136,7 +136,11 @@ a{color:inherit}
 .hero-meta li{display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;background:var(--surface);
   border:1px solid var(--line);font-weight:600;font-size:15px;box-shadow:var(--shadow)}
 .hero-meta li b{font-weight:800}
-.hero-cta{display:flex;align-items:center;gap:16px;margin-top:30px;flex-wrap:wrap}
+.hero-cta{display:flex;align-items:stretch;gap:12px;margin-top:28px;flex-wrap:wrap}
+.hero-date{display:inline-flex;align-items:center;gap:9px;min-height:56px;padding:0 22px;border-radius:999px;background:var(--surface);
+  border:1px solid var(--line);font-weight:600;font-size:16px;box-shadow:var(--shadow);white-space:nowrap}
+.hero-date b{font-weight:800}
+.nobr{white-space:nowrap}
 /* подарок за регистрацию – тёмная карточка справа */
 .gift-card{position:relative;background:var(--dark);color:#fff;border-radius:var(--radius-lg);padding:34px 32px 30px;
   box-shadow:0 34px 66px -32px rgba(16,18,20,.6);overflow:hidden}
@@ -191,6 +195,9 @@ a{color:inherit}
 .card h3{font-size:var(--sub);font-weight:700;margin-bottom:4px;font-family:inherit;letter-spacing:0;line-height:1.3}
 .card .who{font-size:var(--fine);font-weight:700;color:var(--ink-3);margin-bottom:12px}
 .card p{color:var(--ink-2)}
+.card .q{color:var(--ink);font-weight:600}
+.card .gain{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.card .gain-l{display:block;font-size:var(--fine);font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
 
 /* ---------- программа ---------- */
 .prog{display:flex;flex-direction:column;gap:14px}
@@ -266,6 +273,9 @@ a{color:inherit}
 .trust div{display:flex;gap:14px;align-items:flex-start;padding:20px 22px;border-radius:var(--radius);
   background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);font-weight:600}
 .trust .em{font-size:24px;line-height:1.1;flex-shrink:0}
+.sp-facts{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px}
+.sp-facts li{display:flex;gap:10px;align-items:flex-start;font-weight:600;font-size:15px;color:#fff}
+.sp-facts .em{flex-shrink:0}
 
 /* ---------- отзывы ---------- */
 /* лента отзывов: одна строка, сама прокручивается по кругу, листается пальцем и стрелками */
@@ -274,9 +284,10 @@ a{color:inherit}
 .rv-track::-webkit-scrollbar{display:none}
 .rv-track > *{flex:0 0 auto}
 .rv{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-  padding:10px;cursor:zoom-in;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;display:block;height:440px}
+  padding:10px;cursor:zoom-in;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  display:flex;align-items:center;justify-content:center;height:440px;width:320px}
 .rv:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#D2D6DB}
-.rv img{height:100%;width:auto;display:block;border-radius:12px}
+.rv img{max-width:100%;max-height:100%;width:auto;height:auto;display:block;border-radius:12px}
 .rv-nav{display:flex;justify-content:center;gap:12px;margin-top:14px}
 .rv-nav button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--surface);font-size:18px;cursor:pointer;color:var(--ink)}
 .rv-nav button:hover{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
@@ -401,14 +412,15 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
   h1{font-size:clamp(28px,7.6vw,38px)}
   .hero-sub{font-size:18px}
   .nw{white-space:normal}
+  .nobr{white-space:normal}
   .hero-grid{grid-template-columns:1fr;gap:30px}
   .hero-cta{width:100%;gap:12px}
-  .hero-cta .btn{width:100%}
+  .hero-cta .btn,.hero-date{width:100%;justify-content:center}
   .hero-meta li{flex:1 1 auto;justify-content:center}
   .gift-card{padding:28px 24px 24px}
   .plans,.gifts,.foot-grid,.trust,.krugi{grid-template-columns:1fr}
   .rv,.rv-cta{height:360px}
-  .rv-cta{width:260px}
+  .rv,.rv-cta{width:260px}
   .plan{padding:26px 22px 24px}
   .price b{font-size:40px}
   .cash-note{grid-template-columns:1fr;gap:10px;padding:20px}
@@ -450,7 +462,7 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
     </div>
     <div class="hdr-mid">
       <span class="label">Онлайн мастер-класс</span>
-      <span class="when"><b>15 октября</b> · 15:00 мск</span>
+      <span class="when"><b>15&nbsp;октября</b> в&nbsp;15:00&nbsp;мск</span>
     </div>
     <a class="btn btn-sm" href="#tarify">Забронировать <span class="arw">→</span></a>
   </div>
@@ -464,10 +476,8 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
         <span class="label">Онлайн мастер-класс</span>
         <h1>Как превратить свой блог в <span class="mark">источник дохода</span> – от первой рекламы и амбассадорства до продаж услуг</h1>
         <p class="hero-sub">Пошаговый практический план за 20 минут в день без выгорания, танцев в сторис и вложений в рекламу.</p>
-        <ul class="hero-meta">
-          <li>📅 <span><b>15 октября</b> в 15:00 мск</span></li>
-        </ul>
         <div class="hero-cta">
+          <span class="hero-date">📅 <span><b>15&nbsp;октября</b> в&nbsp;15:00&nbsp;мск</span></span>
           <a class="btn" href="#tarify">Выбрать формат участия <span class="arw">→</span></a>
         </div>
         <div class="hero-clock">
@@ -499,9 +509,9 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
       <h2>Для кого этот мастер-класс</h2>
     </div>
     <div class="cards grid">
-      <div class="card reveal"><div class="ic">🏠</div><h3>«Архитекторы уюта»</h3><div class="who">Мамы, домохозяйки и лайфстайл-авторы</div><p>Думаете, что ваша бытовая жизнь никому не интересна? Вы узнаете, как превратить обычный уход за собой, домашний уют и семейную рутину в нативный контент, за который бренды платят деньги.</p></div>
-      <div class="card reveal"><div class="ic">💎</div><h3>«Скрытые эксперты»</h3><div class="who">Эксперты и помогающие специалисты</div><p>У вас огромный багаж знаний, но вы продаёте услуги за копейки? Разберём ошибки упаковки и покажем, как поднять чеки в 2–3 раза и превратить блог в дорогую бизнес-визитку.</p></div>
-      <div class="card reveal"><div class="ic">🥷</div><h3>«Партизаны в соцсетях»</h3><div class="who">Новички с 0 подписчиков и страхом оценки</div><p>Мечтаете о блоге, но боитесь хейта и оценки знакомых? Получите алгоритм лёгкого старта с нуля с помощью нейросетей, без стеснения перед камерой и постоянного показа семьи.</p></div>
+      <div class="card reveal"><div class="ic">🏠</div><h3>«Архитекторы уюта»</h3><div class="who">Мамы, домохозяйки и лайфстайл-авторы</div><p class="q">Думаете, что ваша бытовая жизнь никому не интересна?</p><div class="gain"><span class="gain-l">Что получите</span><p>Вы узнаете, как превратить обычный уход за собой, домашний уют и семейную рутину в нативный контент, за который бренды платят деньги.</p></div></div>
+      <div class="card reveal"><div class="ic">💎</div><h3>«Скрытые эксперты»</h3><div class="who">Эксперты и помогающие специалисты</div><p class="q">У вас огромный багаж знаний, но вы продаёте услуги за копейки?</p><div class="gain"><span class="gain-l">Что получите</span><p>Разберём ошибки упаковки и покажем, как поднять чеки в 2–3 раза и превратить блог в дорогую бизнес-визитку.</p></div></div>
+      <div class="card reveal"><div class="ic">🥷</div><h3>«Партизаны в соцсетях»</h3><div class="who">Новички с 0 подписчиков и страхом оценки</div><p class="q">Мечтаете о блоге, но боитесь хейта и оценки знакомых?</p><div class="gain"><span class="gain-l">Что получите</span><p>Получите алгоритм лёгкого старта с нуля с помощью нейросетей, без стеснения перед камерой и постоянного показа семьи.</p></div></div>
     </div>
   </div>
 </section>
@@ -596,13 +606,13 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
           <div class="sp-name">Ангелина Косяк</div>
           <div class="sp-role">Главный куратор курса «Блогер с нуля»</div>
           <p>Подключится во 2-й части эфира. Лично отвечает за заботу, ответы на вопросы и проверку домашних заданий учеников.</p>
+          <ul class="sp-facts">
+            <li><span class="em">🎓</span>Обучила 12 потоков учеников с абсолютного нуля</li>
+            <li><span class="em">🎯</span>88% выпускников отмечают стопроцентную ясность</li>
+            <li><span class="em">🤝</span>Заботливое сопровождение без выгорания</li>
+          </ul>
         </div>
       </div>
-    </div>
-    <div class="trust grid">
-      <div class="reveal"><span class="em">🎓</span><span>Обучили 12 потоков учеников с абсолютного нуля</span></div>
-      <div class="reveal"><span class="em">🎯</span><span>88% выпускников отмечают стопроцентную ясность стратегии</span></div>
-      <div class="reveal"><span class="em">🤝</span><span>Заботливое сопровождение без выгорания</span></div>
     </div>
   </div>
 </section>
@@ -702,7 +712,7 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
     <div class="reg-plate reveal">
       <div>
         <span class="label">Регистрация</span>
-        <h2>Мастер-класс 15 октября в 15:00 мск</h2>
+        <h2>Мастер-класс <span class="nobr">15&nbsp;октября в&nbsp;15:00&nbsp;мск</span></h2>
         <p>Онлайн. Ссылка на эфир придёт после регистрации.</p>
       </div>
       <div class="reg-side">
@@ -721,7 +731,7 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
         <div class="brand">
           <img class="brand-logo" src="data:image/png;base64,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" alt="FitStars">
         </div>
-        <p>Мастер-класс «Блогер с нуля» · 15 октября, 15:00 мск</p>
+        <p>Мастер-класс «Блогер с нуля» · 15&nbsp;октября, 15:00&nbsp;мск</p>
       </div>
       <div class="foot-col">
         <h4>Документы</h4>
