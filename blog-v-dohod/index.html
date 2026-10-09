@@ -300,6 +300,8 @@ a{color:inherit}
   font-size:20px;padding-left:4px;box-shadow:0 10px 24px -8px rgba(0,0,0,.5)}
 .krug-v.playing .krug-play{opacity:0}
 .krug blockquote{font-weight:600;line-height:1.45;margin-bottom:12px}
+.krug figcaption{margin-top:auto;display:flex;flex-direction:column;gap:4px}
+.krug .who{font-weight:700;font-size:16px}
 .krug .tag{font-size:var(--label);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
 .lightbox{position:fixed;inset:0;z-index:120;background:rgba(21,23,20,.88);display:flex;align-items:center;justify-content:center;
   padding:24px;opacity:0;visibility:hidden;transition:opacity .2s ease, visibility .2s ease;cursor:zoom-out}
@@ -614,17 +616,17 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
       <figure class="krug reveal">
         <button type="button" class="krug-v" aria-label="Смотреть видеоотзыв"><video src="video/krug-1.mp4" poster="video/krug-1.jpg" playsinline preload="none"></video><span class="krug-play"><span>▶</span></span></button>
         <blockquote>«Когда заходила на курс, вообще не знала ни про какие гранты. Я в таком приятном шоке!»</blockquote>
-        <figcaption class="tag">Про грант курса</figcaption>
+        <figcaption><b class="who">Татьяна</b><span class="tag">Про грант курса</span></figcaption>
       </figure>
       <figure class="krug reveal">
         <button type="button" class="krug-v" aria-label="Смотреть видеоотзыв"><video src="video/krug-2.mp4" poster="video/krug-2.jpg" playsinline preload="none"></video><span class="krug-play"><span>▶</span></span></button>
         <blockquote>«Не была уверена, что моя история кому-то интересна, – а заняла третье место»</blockquote>
-        <figcaption class="tag">Голосование за грант</figcaption>
+        <figcaption><b class="who">Анастасия Бричина</b><span class="tag">Голосование за грант</span></figcaption>
       </figure>
       <figure class="krug reveal">
         <button type="button" class="krug-v zoom" aria-label="Смотреть видеоотзыв"><video src="video/krug-3.mp4" poster="video/krug-3.jpg" playsinline preload="none"></video><span class="krug-play"><span>▶</span></span></button>
         <blockquote>«Отвечают даже на самые глупые вопросы – доступно, понятно и с терпением»</blockquote>
-        <figcaption class="tag">Про кураторов</figcaption>
+        <figcaption><b class="who">Алина</b><span class="tag">Про кураторов</span></figcaption>
       </figure>
     </div>
     <div class="reviews">
