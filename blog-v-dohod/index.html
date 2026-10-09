@@ -998,8 +998,8 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
   }
   window.gcLoad=load;
   function all(){ document.querySelectorAll('.gc-slot').forEach(load) }
-  if(document.readyState==='complete') setTimeout(all,1500);
-  else window.addEventListener('load',function(){ setTimeout(all,1500) });
+  // не ждём полной загрузки (её задерживают внешние счётчики) – стартуем через 2 с после показа страницы
+  setTimeout(all,2000);
 })();
 
 // модалки: открыть / закрыть
