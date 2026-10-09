@@ -96,8 +96,9 @@ a{color:inherit}
 .btn:hover .arw{transform:translateX(4px)}
 .btn-ghost{animation:none;background:transparent;color:var(--ink);border:1.5px solid #CFD3D8;box-shadow:none}
 .btn-ghost:hover{background:var(--wash);box-shadow:none;transform:none;border-color:#B9BEC4}
-.band-dark .btn-ghost{color:#fff;border-color:rgba(255,255,255,.3)}
-.band-dark .btn-ghost:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.5)}
+/* контурная кнопка на тёмном фоне: текст всегда белый, при наведении – лёгкая подсветка и салатовая рамка */
+.band-dark .btn-ghost,.reg-plate .btn-ghost{color:#fff;border-color:rgba(255,255,255,.35)}
+.band-dark .btn-ghost:hover,.reg-plate .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--accent);color:#fff}
 .btn-sm{min-height:46px;font-size:15px;padding:0 22px}
 .fine{font-size:var(--fine);color:var(--ink-2);font-weight:500}
 
@@ -247,7 +248,7 @@ a{color:inherit}
 .speakers{display:grid;grid-template-columns:1fr 1fr;gap:22px;position:relative;z-index:1}
 .speaker{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:flex-start;background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-lg);padding:26px}
-.sp-photo{width:140px;height:175px;border-radius:18px;object-fit:cover;object-position:center 20%;
+.sp-photo{width:140px;height:175px;border-radius:18px;object-fit:cover;object-position:center 12%;
   border:2px solid rgba(255,255,255,.16);display:block}
 .sp-photo-ph{width:140px;height:175px;border-radius:18px;background:var(--dark-2);border:2px dashed rgba(255,255,255,.28);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:16px;color:#B9BDB3}
@@ -265,13 +266,22 @@ a{color:inherit}
 .trust .em{font-size:24px;line-height:1.1;flex-shrink:0}
 
 /* ---------- отзывы ---------- */
-.reviews{columns:3 280px;column-gap:18px}
-.rv{break-inside:avoid;margin:0 0 18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+.rv-col{display:flex;flex-direction:column;gap:18px}
+.rv{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
   padding:10px;cursor:zoom-in;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;display:block;width:100%}
 .rv:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#D2D6DB}
 .rv img{width:100%;height:auto;display:block;border-radius:12px}
-.rv-ph{break-inside:avoid;margin:0 0 18px;border:2px dashed #CFD3D8;border-radius:var(--radius);padding:34px 22px;
+.rv-ph{border:2px dashed #CFD3D8;border-radius:var(--radius);padding:34px 22px;
   text-align:center;color:var(--ink-3);font-weight:600;font-size:15px;background:var(--surface)}
+.rv-cta{background:var(--dark);color:#fff;border-radius:var(--radius);padding:30px 26px;position:relative;overflow:hidden}
+.rv-cta::after{content:"";position:absolute;right:-80px;bottom:-90px;width:240px;height:240px;border-radius:50%;
+  background:radial-gradient(circle,rgba(196,245,66,.25),transparent 70%);pointer-events:none}
+.rv-cta > *{position:relative;z-index:1}
+.rv-cta .label{color:#C9CDC2;margin-bottom:14px}
+.rv-cta h3{font-size:var(--sub);font-weight:700;line-height:1.3;margin-bottom:10px}
+.rv-cta p{color:#CFD3C8;margin-bottom:20px}
+.rv-cta .btn{width:100%}
 .lightbox{position:fixed;inset:0;z-index:120;background:rgba(21,23,20,.88);display:flex;align-items:center;justify-content:center;
   padding:24px;opacity:0;visibility:hidden;transition:opacity .2s ease, visibility .2s ease;cursor:zoom-out}
 .lightbox.open{opacity:1;visibility:visible}
@@ -368,7 +378,7 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
   .hero-cta .btn{width:100%}
   .hero-meta li{flex:1 1 auto;justify-content:center}
   .gift-card{padding:28px 24px 24px}
-  .plans,.gifts,.foot-grid,.trust{grid-template-columns:1fr}
+  .plans,.gifts,.foot-grid,.trust,.reviews{grid-template-columns:1fr}
   .plan{padding:26px 22px 24px}
   .price b{font-size:40px}
   .cash-note{grid-template-columns:1fr;gap:10px;padding:20px}
@@ -543,8 +553,7 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
     </div>
     <div class="speakers grid">
       <div class="speaker reveal">
-        <!-- ФОТО: когда придёт фото Виктории, заменить блок ниже на <img class="sp-photo" src="..." alt="Виктория Ложникова"> -->
-        <div class="sp-photo-ph" aria-hidden="true"><span class="av">ВЛ</span><span>Фото Виктории</span></div>
+        <img class="sp-photo" src="foto/lozhnikova.jpg" alt="Виктория Ложникова" loading="lazy">
         <div class="sp-body">
           <div class="sp-name">Виктория Ложникова</div>
           <div class="sp-role">Медийный эксперт, маркетолог, спикер курса «Блогер с нуля»</div>
@@ -579,18 +588,30 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
       <p>Посмотрите, каких результатов добиваются наши ученики благодаря понятной системе!</p>
     </div>
     <div class="reviews">
-      <button type="button" class="rv reveal"><img src="otzyvy/01.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv reveal"><img src="otzyvy/02.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv reveal"><img src="otzyvy/03.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv reveal"><img src="otzyvy/04.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv reveal"><img src="otzyvy/05.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv reveal"><img src="otzyvy/06.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv reveal"><img src="otzyvy/07.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv reveal"><img src="otzyvy/08.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv reveal"><img src="otzyvy/09.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv reveal"><img src="otzyvy/10.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv reveal"><img src="otzyvy/11.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
-      <button type="button" class="rv reveal"><img src="otzyvy/12.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+     <div class="rv-col reveal">
+      <button type="button" class="rv"><img src="otzyvy/01.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/06.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/07.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/09.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/10.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+     </div>
+     <div class="rv-col reveal">
+      <button type="button" class="rv"><img src="otzyvy/02.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/08.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/11.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/12.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+     </div>
+     <div class="rv-col reveal">
+      <button type="button" class="rv"><img src="otzyvy/03.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/04.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <button type="button" class="rv"><img src="otzyvy/05.jpg" alt="Отзыв выпускницы курса «Блогер с нуля»" loading="lazy"></button>
+      <div class="rv-cta">
+        <span class="label">Ваша история</span>
+        <h3>Следующий отзыв – ваш</h3>
+        <p>Каждый из этих результатов начинался с первого шага. Ваш – мастер-класс 15 октября.</p>
+        <a class="btn btn-sm" href="#tarify">Выбрать тариф <span class="arw">→</span></a>
+      </div>
+     </div>
     </div>
   </div>
 </section>
@@ -615,7 +636,7 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
       </div>
       <div class="reg-side">
         <button type="button" class="btn" data-modal="modal-free">Зарегистрироваться на мастер-класс <span class="arw">→</span></button>
-        <button type="button" class="btn btn-ghost" data-modal="modal-vip" style="color:#fff;border-color:rgba(255,255,255,.3)">Или забрать VIP за 590 ₽</button>
+        <button type="button" class="btn btn-ghost" data-modal="modal-vip">Или забрать VIP за 590 ₽</button>
       </div>
     </div>
   </div>
