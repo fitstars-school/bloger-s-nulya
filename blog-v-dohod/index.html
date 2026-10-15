@@ -287,6 +287,7 @@ a{color:inherit}
 .hero-date{display:inline-flex;align-items:center;gap:9px;min-height:56px;padding:0 22px;border-radius:999px;background:var(--surface);
   border:1px solid var(--line);font-weight:600;font-size:16px;box-shadow:var(--shadow);white-space:nowrap}
 .hero-date b{font-weight:800}
+.hero-note{margin-top:12px;font-size:15px;line-height:1.45;font-weight:500;color:var(--ink-2);max-width:none}
 .nobr{white-space:nowrap}
 /* подарок за регистрацию – тёмная карточка справа */
 .gift-card{position:relative;background:var(--dark);color:#fff;border-radius:var(--radius-lg);padding:34px 32px 30px;
@@ -373,6 +374,7 @@ a{color:inherit}
 .plan.vip .label{color:#C9CDC2}
 .plan-badge{font-size:var(--label);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);
   background:var(--accent);padding:6px 11px;border-radius:999px;white-space:nowrap}
+.plan-lead{font-size:15px;line-height:1.45;font-weight:500;color:#CFD3C8;margin:-4px 0 18px}
 .plan-name{font-family:'Unbounded',sans-serif;font-weight:700;font-size:24px;line-height:1.2;margin-bottom:14px}
 .price{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding-bottom:22px;margin-bottom:8px;border-bottom:1px solid var(--line)}
 .plan.vip .price{border-color:rgba(255,255,255,.14)}
@@ -633,6 +635,7 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
           <span class="hero-date">📅 <span><b>21&nbsp;октября</b> в&nbsp;15:00&nbsp;мск</span></span>
           <a class="btn" href="#tarify">Выбрать формат участия <span class="arw">→</span></a>
         </div>
+        <p class="hero-note">Участвуйте бесплатно или получите расширенный пакет за 590&nbsp;₽ – всю сумму можно зачесть при покупке курса.</p>
         <div class="hero-clock">
           <span class="hc-label">До начала эфира</span>
           <div class="clock" aria-live="off">
@@ -703,12 +706,12 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
         <div class="price"><b>0 ₽</b></div>
         <ul class="feat">
           <li class="yes"><span class="mk">✓</span><span><span class="t">Участие в онлайн-эфире</span></span></li>
+          <li class="no"><span class="mk">✕</span><span><span class="t">100% кэшбэк-депозит на GetCourse</span></span></li>
+          <li class="no"><span class="mk">✕</span><span><span class="t">Доступ к Редактору каруселей</span></span></li>
+          <li class="no"><span class="mk">✕</span><span><span class="t">Видеоурок «Нейрофотосессия и видеоаватары с ИИ»</span></span></li>
           <li class="yes"><span class="mk">✓</span><span><span class="t">Запись мастер-класса</span><span class="d">⏱ На 24 часа</span></span></li>
           <li class="yes"><span class="mk">✓</span><span><span class="t">Полный PDF-конспект эфира</span></span></li>
           <li class="yes"><span class="mk">✓</span><span><span class="t">Интерактивный тест «Твоя платформа 2026-2027»</span><span class="d">Сразу после регистрации</span></span></li>
-          <li class="no"><span class="mk">✕</span><span><span class="t">Доступ к Редактору каруселей</span></span></li>
-          <li class="no"><span class="mk">✕</span><span><span class="t">Видеоурок «Нейрофотосессия и видеоаватары с ИИ»</span></span></li>
-          <li class="no"><span class="mk">✕</span><span><span class="t">100% кэшбэк-депозит на GetCourse</span></span></li>
         </ul>
         <button type="button" class="btn btn-ghost" data-modal="modal-free">Иду бесплатно <span class="arw">→</span></button>
       </div>
@@ -717,14 +720,15 @@ footer{background:var(--dark);color:#CFD3C8;padding:56px 0 34px}
         <div class="plan-top"><span class="label">Тариф</span></div>
         <div class="plan-name">«Всё включено»</div>
         <div class="price"><b>590 ₽</b><s>1 590 ₽</s></div>
+        <p class="plan-lead">Получите не только знания, но и инструменты, чтобы начать создавать контент уже сейчас.</p>
         <ul class="feat">
           <li class="yes"><span class="mk">✓</span><span><span class="t">Участие в онлайн-эфире</span></span></li>
+          <li class="yes cash"><span class="mk">✓</span><span><span class="t">🔥 590 ₽ зачтём в оплату курса «Блогер с нуля»</span><span class="d">Вся сумма зачисляется на ваш депозит на GetCourse и списывается при оплате курса</span></span></li>
+          <li class="yes"><span class="mk">✓</span><span><span class="t">Доступ к Редактору каруселей</span><span class="d">Инструмент для создания продающих карточек</span></span></li>
+          <li class="yes"><span class="mk">✓</span><span><span class="t">Видеоурок «Нейрофотосессия и видеоаватары с ИИ»</span><span class="d">Результат: свой нейрофотосет и простой говорящий аватар</span></span></li>
           <li class="yes"><span class="mk">✓</span><span><span class="t">Запись мастер-класса</span><span class="d">⏱ На 14 дней</span></span></li>
           <li class="yes"><span class="mk">✓</span><span><span class="t">Полный PDF-конспект эфира</span></span></li>
           <li class="yes"><span class="mk">✓</span><span><span class="t">Интерактивный тест «Твоя платформа 2026-2027»</span><span class="d">Сразу после регистрации</span></span></li>
-          <li class="yes"><span class="mk">✓</span><span><span class="t">Доступ к Редактору каруселей</span><span class="d">Инструмент для создания продающих карточек</span></span></li>
-          <li class="yes"><span class="mk">✓</span><span><span class="t">Видеоурок «Нейрофотосессия и видеоаватары с ИИ»</span><span class="d">Результат: свой нейрофотосет и простой говорящий аватар</span></span></li>
-          <li class="yes cash"><span class="mk">✓</span><span><span class="t">🔥 100% кэшбэк-депозит на GetCourse</span><span class="d">Вся сумма 590 ₽ зачисляется на ваш депозит на GetCourse и списывается при оплате курса</span></span></li>
         </ul>
         <button type="button" class="btn" data-modal="modal-vip">Забрать «Всё включено» за 590 ₽ <span class="arw">→</span></button>
       </div>
