@@ -240,34 +240,20 @@ details.mod .mod-body{padding:0 18px 18px 78px}
 .price-new{font-family:'Unbounded',sans-serif;font-weight:800;font-size:34px;color:var(--accent);line-height:1.05}
 .tariff ul.dots li::before{background:var(--accent)}
 .tariff .grow{flex:1}
+.site-cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:28px}
 .pay-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}
 .pay-step{display:flex;gap:16px;align-items:flex-start;background:var(--dark-2);border-radius:16px;padding:18px}
 .band-dark .plate{background:var(--dark-2)}
 .band-dark .promo-plate{background:var(--dark-2);margin-top:0;margin-bottom:24px}
 
-/* подарки */
-.gift{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;justify-content:space-between;background:var(--accent-wash);border-radius:var(--radius);padding:26px}
-.gift-txt{flex:1;min-width:260px}
-.gift-btns{display:flex;gap:10px;flex-wrap:wrap}
-
 /* подвал */
-.foot{background:var(--dark);color:#B9BDB4;padding-top:44px;padding-bottom:32px;margin-top:64px}
+.foot{background:var(--dark);color:#B9BDB4;padding-top:28px;padding-bottom:28px;border-top:1px solid rgba(255,255,255,.08)}
 .foot a{color:#fff}
-.foot-row{display:flex;gap:28px;flex-wrap:wrap;justify-content:space-between}
-.foot-col{display:flex;flex-direction:column;gap:8px}
-.foot-legal{border-top:1px solid rgba(255,255,255,.1);margin-top:28px;padding-top:18px;font-size:13px}
-.foot-legal p+p{margin-top:4px}
 
 /* тост */
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;pointer-events:none;background:var(--ink);color:#fff;
   font-weight:700;padding:12px 20px;border-radius:999px;transition:opacity .2s ease,transform .2s ease;z-index:200}
 .toast.show{opacity:1;transform:translate(-50%,0)}
-
-/* cookie */
-.cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:150;max-width:720px;margin:0 auto;background:#fff;border:1px solid var(--line);
-  border-radius:18px;box-shadow:0 18px 44px -26px rgba(16,18,20,.4);padding:16px 18px;display:none;gap:16px;align-items:center}
-.cookie.show{display:flex}
-.cookie p{flex:1;font-size:13px;color:var(--ink-2)}
 
 @media (max-width:900px){
   .g3,.tariffs{grid-template-columns:1fr}
@@ -284,18 +270,9 @@ details.mod .mod-body{padding:0 18px 18px 78px}
   details.mod .mod-body{padding-left:18px}
   .card,.tariff{padding:20px}
   .step{gap:14px;padding:18px}
-  .cookie{flex-direction:column;align-items:stretch}
 }
 </style>
-<!-- Yandex.Metrika counter (общий счётчик mk.bloggerboost.ru) -->
-<script>
-(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
-for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
-k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=113576775','ym');
-ym(113576775,'init',{ssr:true,webvisor:true,clickmap:true,referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/113576775" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+
 </head>
 <body>
 
@@ -318,7 +295,6 @@ ym(113576775,'init',{ssr:true,webvisor:true,clickmap:true,referrer:document.refe
       <a href="#arhetipy">Архетипы</a>
       <a href="#kurs">Курс</a>
       <a href="#tarify">Тарифы и скидка</a>
-      <a href="#podarki">Подарки</a>
     </div>
   </nav>
 </header>
@@ -793,7 +769,7 @@ ym(113576775,'init',{ssr:true,webvisor:true,clickmap:true,referrer:document.refe
           <div><span class="price-old">16 999 ₽</span></div>
           <div class="price-new">11 900 ₽</div>
           <p>или от 991 ₽ в месяц</p>
-          <a class="btn btn-ghost" href="https://bloggerboost.ru/#tarifs" target="_blank" rel="noopener" data-goal="konspekt_go_tarif">Выбрать <span>→</span></a>
+          <a class="btn btn-ghost" href="https://bloggerboost.ru/#tarifs" target="_blank" rel="noopener">Выбрать <span>→</span></a>
         </div>
         <div class="tariff best">
           <span class="tag">Жемчужина программы</span>
@@ -809,7 +785,7 @@ ym(113576775,'init',{ssr:true,webvisor:true,clickmap:true,referrer:document.refe
           <div><span class="price-old">31 300 ₽</span></div>
           <div class="price-new">21 900 ₽</div>
           <p>или от 1 825 ₽ в месяц</p>
-          <a class="btn" href="https://bloggerboost.ru/#tarifs" target="_blank" rel="noopener" data-goal="konspekt_go_tarif">Выбрать <span>→</span></a>
+          <a class="btn" href="https://bloggerboost.ru/#tarifs" target="_blank" rel="noopener">Выбрать <span>→</span></a>
         </div>
         <div class="tariff">
           <h3>Индивидуальный</h3>
@@ -817,75 +793,27 @@ ym(113576775,'init',{ssr:true,webvisor:true,clickmap:true,referrer:document.refe
           <div><span class="price-old">108 400 ₽</span></div>
           <div class="price-new">75 900 ₽</div>
           <p>или от 6 325 ₽ в месяц</p>
-          <a class="btn btn-ghost" href="https://bloggerboost.ru/#tarifs" target="_blank" rel="noopener" data-goal="konspekt_go_tarif">Выбрать <span>→</span></a>
+          <a class="btn btn-ghost" href="https://bloggerboost.ru/#tarifs" target="_blank" rel="noopener">Выбрать <span>→</span></a>
         </div>
       </div>
 
-      <h3 class="mt36">Как применить промокод и оформить рассрочку</h3>
-      <div class="pay-steps">
-        <div class="pay-step"><span class="num">1</span><p>Нажмите «Выбрать» у тарифа – откроется сайт курса.</p></div>
-        <div class="pay-step"><span class="num">2</span><p>Укажите имя, фамилию, email и телефон – на них придут все доступы.</p></div>
-        <div class="pay-step"><span class="num">3</span><p>В окне оплаты нажмите на плюсик у поля «Промокод» и введите <b>BONUS</b> английскими буквами – стоимость пересчитается.</p></div>
-        <div class="pay-step"><span class="num">4</span><p>Для беспроцентной рассрочки выберите внизу блок «Купить в рассрочку или в кредит». Ни рубля переплаты, первый платёж через 30 дней.</p></div>
-      </div>
-      <div class="plate">
-        <p>Есть и внутренняя гибкая рассрочка, международная оплата, оплата в один клик и с любых карт – спросите в отделе заботы: <a href="https://t.me/zabota_kurs" target="_blank" rel="noopener">@zabota_kurs</a>.</p>
-        <p><b>Сомневаетесь?</b> Есть трёхдневный тест-драйв: три вводных урока, чтобы посмотреть платформу и формат изнутри и принять решение. Чтобы его получить, напишите в отдел заботы.</p>
+      <div class="site-cta">
+        <a class="btn" href="https://bloggerboost.ru" target="_blank" rel="noopener">Перейти на сайт программы <span>→</span></a>
+        <p>Промокод <b>BONUS</b> вводите при оплате.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 9. Подарки -->
-<section class="sec" id="podarki">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="label">Раздел 9</span>
-      <h2>Подарки участникам</h2>
-    </div>
-    <div class="gift reveal">
-      <div class="gift-txt">
-        <h3>Чек-лист по упаковке Max-канала и гайд по распаковке личности через ИИ</h3>
-        <p>Напишите в отдел заботы кодовое слово <b>МАКС</b> – пришлют оба материала. Именно в отдел заботы, не в чат трансляции. Если кнопка не открывается – отключите VPN.</p>
-      </div>
-      <div class="gift-btns">
-        <a class="btn" href="https://max.ru/u/f9LHodD0cOLBNUlz52g1kNrr_QRGfwKKW8ds68GRBNXrQWYT17Pvb36qD4w" target="_blank" rel="noopener" data-goal="konspekt_gift">Написать в MAX <span>→</span></a>
-        <a class="btn btn-ghost" href="https://t.me/zabota_kurs" target="_blank" rel="noopener" data-goal="konspekt_gift">Написать в Telegram</a>
-      </div>
-    </div>
-  </div>
-</section>
 </main>
 
 <footer class="foot">
   <div class="wrap">
-    <div class="foot-row">
-      <div class="foot-col">
-        <b>Курс «Блогер с нуля» · FitStars</b>
-        <span>Конспект мастер-класса 21 октября 2026</span>
-      </div>
-      <div class="foot-col">
-        <a href="mailto:info@influencerexpert.ru">info@influencerexpert.ru</a>
-        <a href="https://t.me/zabota_kurs" target="_blank" rel="noopener">Telegram @zabota_kurs</a>
-        <span>Отвечаем ежедневно, 10:00–20:00 (мск)</span>
-      </div>
-      <div class="foot-col">
-        <a href="https://influencerexpert.ru/politik_11" target="_blank" rel="noopener">Политика конфиденциальности</a>
-        <a href="https://bloggerboost.ru" target="_blank" rel="noopener">Сайт курса</a>
-      </div>
-    </div>
-    <div class="foot-legal">
-      <p>ИП Капустин Илья Алексеевич · ИНН 781624617340 · ОГРНИП 312784720500712</p>
-      <p>© 2026 FitStars · Курс «Блогер с нуля»</p>
-    </div>
+    <p>© 2026 FitStars · Курс «Блогер с нуля» · Конспект мастер-класса 21 октября 2026</p>
   </div>
 </footer>
 
 <div class="toast" id="toast" role="status"></div>
-<div class="cookie" id="cookieBar" role="region" aria-label="Использование cookies">
-  <p>Мы используем файлы cookies, в том числе для аналитики с помощью Яндекс Метрики. Продолжая использовать сайт, вы соглашаетесь с их использованием. Подробнее в <a href="https://influencerexpert.ru/politik_11" target="_blank" rel="noopener">Политике конфиденциальности</a>.</p>
-  <button type="button" class="btn btn-sm" id="cookieOk">Принять</button>
-</div>
 
 <script>
 (function(){
@@ -893,7 +821,7 @@ ym(113576775,'init',{ssr:true,webvisor:true,clickmap:true,referrer:document.refe
   function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
   var state=load();
   function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
-  function goal(n){if(typeof ym==='function'){try{ym(113576775,'reachGoal',n)}catch(e){}}}
+  function goal(){}
 
   // тост
   var toast=document.getElementById('toast'),tt;
@@ -907,7 +835,6 @@ ym(113576775,'init',{ssr:true,webvisor:true,clickmap:true,referrer:document.refe
   document.querySelectorAll('[data-copy]').forEach(function(b){
     b.addEventListener('click',function(){copy(b.getAttribute('data-copy'),'Промокод BONUS скопирован');goal('konspekt_copy_promo')});
   });
-  document.querySelectorAll('[data-goal]').forEach(function(a){a.addEventListener('click',function(){goal(a.getAttribute('data-goal'))})});
 
   // чекбоксы-плашки
   function bindChk(label,onChange){
@@ -994,11 +921,6 @@ ym(113576775,'init',{ssr:true,webvisor:true,clickmap:true,referrer:document.refe
     document.querySelectorAll('.reveal').forEach(function(el){rv.observe(el)});
   }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')})}
 
-  // cookie
-  var cb=document.getElementById('cookieBar');
-  var ck=false;try{ck=localStorage.getItem('cookie-ok')==='1'}catch(e){}
-  if(!ck)cb.classList.add('show');
-  document.getElementById('cookieOk').addEventListener('click',function(){try{localStorage.setItem('cookie-ok','1')}catch(e){}cb.classList.remove('show')});
 })();
 </script>
 </body>
